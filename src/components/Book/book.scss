@@ -1,0 +1,47 @@
+.book {
+  background-color: #bebebe;
+  border: 3px solid black;
+  padding: 25px;
+  height: 420px;
+  width: 300px;
+  overflow: hidden;
+  margin: 25px;
+  cursor: pointer;
+  transition: .2s background-color ease-in-out;
+  &:hover {
+    background-color: rgba(190, 190, 190, 0.65);
+  }
+
+  img {
+    height: 240px;
+    max-width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.book__category {
+  font-size: 13px;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+.book__name {
+  font-size: 16px;
+  margin-top: 20px; /* Убираем внешний отступ */
+  -webkit-line-clamp: 2; /* Число отображаемых строк */
+  display: -webkit-box; /* Включаем флексбоксы */
+  -webkit-box-orient: vertical; /* Вертикальная ориентация */
+  overflow: hidden;
+}
+
+.book__author {
+  margin-top: 3px;
+  font-size: 13px;
+  -webkit-line-clamp: 2; /* Число отображаемых строк */
+  display: -webkit-box; /* Включаем флексбоксы */
+  -webkit-box-orient: vertical; /* Вертикальная ориентация */
+  overflow: hidden;
+}
+

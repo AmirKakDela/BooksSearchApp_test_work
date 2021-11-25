@@ -1,0 +1,48 @@
+.book-list-wrap {
+  width: 100%;
+  text-align: center;
+
+  .books-list__preload {
+    padding-top: 20%;
+  }
+}
+
+.book-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 50px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.book-list__title {
+  padding: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+.books-list__load-more {
+  background-color: lightpink;
+  padding: 35px 0 ;
+  width: 100%;
+
+  align-items: center;
+  cursor: pointer;
+
+  p {
+    font-weight: 700;
+    font-size: 23px;
+  }
+}
+
+.books-list__loader-more {
+  margin: 2% 0px;
+}
+
+@media (max-width: 900px) {
+  .book-list {
+    justify-content: center;
+  }
+}

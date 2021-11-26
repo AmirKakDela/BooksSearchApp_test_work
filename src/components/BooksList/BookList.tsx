@@ -32,28 +32,23 @@ const BookList: React.FC<BookListProps> = (props) => {
     }
 
     return (
-        <>
-            {error ? <h4>{error}</h4> :
-                <div className="book-list-wrap">
-                    {isInitLoader && books.length === 0 ?
-                        <h4 className="books-list__preload">Идет загрузка...</h4> : books.length !== 0 ?
-                            <>
-                                <h4 className="book-list__title">Found {booksCount} Result</h4>
-                                <div className="book-list">
-                                        {booksRender()}
-                                </div>
-                                {isMoreLoader ? <h4 className="books-list__loader-more">Идет загрузка...</h4> : null}
-                                <div className="books-list__load-more">
-                                    <p
-                                        onClick={handleLoadMore}
-                                    >Load More</p>
-                                </div>
-                            </>
-                            : <h4 className="books-list__preload">Здесь буду книги</h4>}
-
-                </div>
-            }
-        </>
+        <div className="book-list_wrap">
+            {error ? <h2>Что то пошло не так :(</h2> :
+                isInitLoader ? <h2>Загрузка...</h2> : books.length === 0 ?
+                    <h2>Здесь будут книги</h2> :
+                    <>
+                        <h4 className="book-list__title">Found {booksCount} Results</h4>
+                        <div className="book-list">
+                            {booksRender()}
+                        </div>
+                    </>}
+            {isMoreLoader ? <h2>Загрузка...</h2> : null}
+            {books.length !== 0 ? <div className="books-list__load-more">
+                <p
+                    onClick={handleLoadMore}
+                >Load More</p>
+            </div> : null}
+        </div>
     );
 };
 
